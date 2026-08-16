@@ -1,0 +1,32 @@
+:root {
+  --c-primary: #8a6d3b;
+  --c-surface: #f5efe0;
+  --c-surface-alt: #ece2cd;
+  --c-ink: #3a3226;
+  --c-ink-muted: #6b5d45;
+  --c-accent: #c0392b;
+  --c-growth: #3d7a4d;
+  --c-steel: #6b7c8c;
+  --c-gold: #b8860b;
+  --c-border: #cbbf9e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Sarasa Gothic SC', 'Sarasa Mono SC', 'Microsoft YaHei', sans-serif;
+  background: var(--c-surface);
+  color: var(--c-ink);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+#app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 8px;
+}
