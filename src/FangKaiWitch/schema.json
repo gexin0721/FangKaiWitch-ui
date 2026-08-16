@@ -1,0 +1,340 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "default": "圣历四九二年冬",
+          "type": "string"
+        },
+        "当前区域": {
+          "default": "边陲镇",
+          "type": "string"
+        },
+        "邪魔之月状态": {
+          "default": false,
+          "type": "boolean"
+        },
+        "剧情阶段": {
+          "default": "萌芽",
+          "type": "string",
+          "enum": [
+            "萌芽",
+            "崛起",
+            "争锋"
+          ]
+        },
+        "近期事件": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "领地": {
+      "type": "object",
+      "properties": {
+        "规模": {
+          "default": 1,
+          "type": "number"
+        },
+        "教会警戒度": {
+          "default": 0,
+          "type": "number"
+        },
+        "农业": {
+          "type": "object",
+          "properties": {
+            "人口": {
+              "default": 200,
+              "type": "number"
+            },
+            "粮食产量": {
+              "default": 30,
+              "type": "number"
+            },
+            "粮食储备": {
+              "default": 40,
+              "type": "number"
+            },
+            "特产": {
+              "default": [
+                "神石",
+                "煤"
+              ],
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "经济": {
+          "type": "object",
+          "properties": {
+            "贸易收入": {
+              "default": 0,
+              "type": "number"
+            },
+            "税收": {
+              "default": 5,
+              "type": "number"
+            },
+            "物资储备": {
+              "default": {},
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "矿产产出": {
+              "default": {},
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "外交": {
+          "type": "object",
+          "properties": {
+            "灰堡王室": {
+              "default": 10,
+              "type": "number"
+            },
+            "灰堡贵族": {
+              "default": 10,
+              "type": "number"
+            },
+            "教会": {
+              "default": 0,
+              "type": "number"
+            },
+            "晨曦王国": {
+              "default": 0,
+              "type": "number"
+            },
+            "狼心王国": {
+              "default": 0,
+              "type": "number"
+            },
+            "莫金沙民": {
+              "default": 0,
+              "type": "number"
+            },
+            "边境城邦": {
+              "default": 0,
+              "type": "number"
+            },
+            "峡湾群岛": {
+              "default": 0,
+              "type": "number"
+            },
+            "商会": {
+              "default": 5,
+              "type": "number"
+            },
+            "佣兵团": {
+              "default": 5,
+              "type": "number"
+            },
+            "魔鬼": {
+              "default": -50,
+              "type": "number"
+            }
+          }
+        },
+        "军事": {
+          "type": "object",
+          "properties": {
+            "陆军": {
+              "default": 50,
+              "type": "number"
+            },
+            "海军": {
+              "default": 0,
+              "type": "number"
+            },
+            "空军": {
+              "default": 0,
+              "type": "number"
+            },
+            "装备水平": {
+              "default": 10,
+              "type": "number"
+            },
+            "士气": {
+              "default": 50,
+              "type": "number"
+            }
+          }
+        },
+        "科技": {
+          "type": "object",
+          "properties": {
+            "科技等级": {
+              "default": 1,
+              "type": "number"
+            },
+            "技术研究进度": {
+              "default": {},
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "奥术学派进度": {
+              "default": 0,
+              "type": "number"
+            },
+            "魔导化程度": {
+              "default": 0,
+              "type": "number"
+            }
+          }
+        },
+        "稳定度": {
+          "type": "object",
+          "properties": {
+            "治安": {
+              "default": 40,
+              "type": "number"
+            },
+            "民意": {
+              "default": 50,
+              "type": "number"
+            }
+          }
+        },
+        "社会思潮": {
+          "type": "object",
+          "properties": {
+            "当前主流主义": {
+              "default": "封建主义",
+              "type": "string"
+            },
+            "思潮强度": {
+              "default": {},
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "改革推行进度": {
+              "default": {},
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "改革过渡期": {
+              "default": false,
+              "type": "boolean"
+            },
+            "反扑风险": {
+              "default": 0,
+              "type": "number"
+            }
+          }
+        }
+      },
+      "required": [
+        "农业",
+        "经济",
+        "外交",
+        "军事",
+        "科技",
+        "稳定度",
+        "社会思潮"
+      ]
+    },
+    "温蒂": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "default": 0,
+          "type": "number"
+        }
+      }
+    },
+    "夜莺": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "default": 0,
+          "type": "number"
+        },
+        "信任度": {
+          "default": 0,
+          "type": "number"
+        }
+      }
+    },
+    "书卷": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "default": 0,
+          "type": "number"
+        }
+      }
+    },
+    "叶子": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "default": 0,
+          "type": "number"
+        }
+      }
+    },
+    "希尔维": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "default": 0,
+          "type": "number"
+        }
+      }
+    },
+    "爱葛莎": {
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "default": 0,
+          "type": "number"
+        }
+      }
+    }
+  },
+  "required": [
+    "世界",
+    "领地",
+    "温蒂",
+    "夜莺",
+    "书卷",
+    "叶子",
+    "希尔维",
+    "爱葛莎"
+  ]
+}
